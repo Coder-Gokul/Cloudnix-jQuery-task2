@@ -67,8 +67,6 @@ $(document).ready(function () {
     color: "#CC0000",
   });
 
-
-
   // Hiding the element with ID mypage_footer
   // $("#mypage_footer").hide();
 
@@ -96,31 +94,23 @@ $(document).ready(function () {
 
   // Initially hide the footer
 
-  $("footer").css({
-    display: "none", // Ensure it is hidden initially
-    height: "0", // Set height to 0
+  const $footer = $("#mypage_footer footer");
+  $footer.css({
+    display: "none",
   });
 
- 
-  // On mouseenter, slide down the footer and show the alert
-
+  
+  // Mouse enter: slide down
   $("#mypage_footer").on("mouseenter", function () {
-    $("footer").css({
-      height: "auto",
-    }),
-
-    $("footer")
-      .stop()
-      .slideDown(10000, function () {
-        alert("Animation is Completed!");
-      });
+    $footer.stop(true, true).slideDown(10000, function () {
+      alert("Animation complete");
+    });
   });
 
-  // On mouseleave, slide back the footer and hide it
-  $("#mypage_footer").mouseleave(function () {
-    $("footer")
-      .stop(true, true)
-      .slideUp(500);
+
+  // Mouse leave: slide up
+  $("#mypage_footer").on("mouseleave", function () {
+    $footer.stop(true).slideUp(500); // Adjust speed as needed
   });
 
 });

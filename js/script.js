@@ -67,6 +67,12 @@ $(document).ready(function () {
     color: "#CC0000",
   });
 
+  $("#mypage_footer").css({
+    "background-color": "#FFFF88",
+    "border-color": "#FF1A00",
+    color: "#CC0000",
+  });
+
   // Hiding the element with ID mypage_footer
   // $("#mypage_footer").hide();
 
